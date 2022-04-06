@@ -3,18 +3,15 @@
 		"title": "PowerDNS",
 		"explanation": "PowerDNS Server"
 	},
-	"provider": {
-		"type": "power_dns"
-	},
-	"configuration": {
-		"version": "1.4.0",
-		"source": "pan-net/powerdns",
-		"ttl": 120,
-		"protocol": "http",
-		"port" : 8081,
-		"endpoint": "api/v1",
-		"api_key": "^^random(64)^^",
-		"dns_type": "none"
+	"binding_target": {
+		"configuration": {
+			"ttl": 120,
+			"protocol": "http",
+			"port" : 8081,
+			"endpoint": "api/v1",
+			"api_key": "^^random(64)^^",
+			"dns_type": "none"
+		}
 	},
 	"ports" : [
 		{
