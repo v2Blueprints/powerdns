@@ -1,58 +1,38 @@
 {
-	"about": {
-		"title": "PowerDNS",
-		"explanation": "PowerDNS Server"
-	},
-	"binding_target": {
-		"configuration": {
-			"ttl": 120,
-			"protocol": "http",
-			"port" : 8081,
-			"endpoint": "api/v1",
-			"api_key": "^^random(64)^^",
-			"dns_type": "none"
-		}
-	},
-	"ports" : [
-		{
-			"start_port": 53,
-			"external_port": 53,
-			"protocol": "udp"
-		}
-	],
-	"volumes": [
-		{
-			"destination": "/var/lib/powerdns/",
-			"name": "data"
-		}
-	],
-	"bindings": [
-		{
-			"type": "embed",
-			"runtimes": [
-			  "lxd"
-			],
-			"target": {
-			  "repository": "https://github.com/v2Blueprints/enginesd_debian_base"
-			}
-		}
-	],
-	"images": [
-	  {
-	    "runtimes": [
-	      "docker"
-	    ],
-	    "target": {
-	      "repository": "https://github.com/v2Blueprints/enginesd_debian_base"
-	    }
-	  }
-	],
-	"system_packages": {
-		"adds": [
-			"pdns-server",
-			"pdns-backend-sqlite3",
-			"sqlite3",
-			"syslog-ng"
-		]
-	}
+  "identifier": "powerdns",
+  "about": {
+    "title": "PowerDNS",
+    "explanation": "PowerDNS Server"
+  },
+  "binding_target": {
+    "configuration": {
+      "ttl": 120,
+      "protocol": "http",
+      "port": 8081,
+      "endpoint": "api/v1",
+      "api_key": "^^random(64)^^",
+      "dns_type": "none"
+    }
+  },
+  "ports": [
+    {
+      "start_port": 53,
+      "external_port": 53,
+      "protocol": "udp"
+    }
+  ],
+  "volumes": [
+    {
+      "destination": "/var/lib/powerdns/",
+      "name": "data"
+    }
+  ],
+  "system_packages": {
+    "adds": [
+      "pdns-server",
+      "pdns-backend-sqlite3",
+      "sqlite3",
+      "syslog-ng"
+    ]
+  }
 }
