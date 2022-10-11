@@ -16,8 +16,8 @@
   },
   "ports": [
     {
-      "start_port": 53,
-      "external_port": 53,
+      "container_port": 53,
+      "host_port": 53,
       "protocol": "udp"
     }
   ],
